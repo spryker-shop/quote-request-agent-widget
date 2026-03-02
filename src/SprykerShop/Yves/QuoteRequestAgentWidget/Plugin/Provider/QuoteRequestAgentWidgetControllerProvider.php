@@ -25,11 +25,6 @@ class QuoteRequestAgentWidgetControllerProvider extends AbstractYvesControllerPr
      */
     protected const ROUTE_QUOTE_REQUEST_AGENT_CLEAR_CART = 'agent/quote-request/cart/clear';
 
-    /**
-     * @param \Silex\Application $app
-     *
-     * @return void
-     */
     protected function defineControllers(Application $app): void
     {
         $this->addQuoteRequestSaveCartRoute()

@@ -28,52 +28,27 @@ class QuoteRequestAgentWidgetToQuoteRequestAgentClientBridge implements QuoteReq
         $this->quoteRequestAgentClient = $quoteRequestAgentClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestTransfer $quoteRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteRequestResponseTransfer
-     */
     public function updateQuoteRequest(QuoteRequestTransfer $quoteRequestTransfer): QuoteRequestResponseTransfer
     {
         return $this->quoteRequestAgentClient->updateQuoteRequest($quoteRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestOverviewFilterTransfer $quoteRequestOverviewFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteRequestOverviewCollectionTransfer
-     */
     public function getQuoteRequestOverviewCollection(
         QuoteRequestOverviewFilterTransfer $quoteRequestOverviewFilterTransfer
     ): QuoteRequestOverviewCollectionTransfer {
         return $this->quoteRequestAgentClient->getQuoteRequestOverviewCollection($quoteRequestOverviewFilterTransfer);
     }
 
-    /**
-     * @param string $quoteRequestReference
-     *
-     * @return \Generated\Shared\Transfer\QuoteRequestTransfer|null
-     */
     public function findQuoteRequestByReference(string $quoteRequestReference): ?QuoteRequestTransfer
     {
         return $this->quoteRequestAgentClient->findQuoteRequestByReference($quoteRequestReference);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestFilterTransfer $quoteRequestFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteRequestTransfer|null
-     */
     public function findQuoteRequest(QuoteRequestFilterTransfer $quoteRequestFilterTransfer): ?QuoteRequestTransfer
     {
         return $this->quoteRequestAgentClient->findQuoteRequest($quoteRequestFilterTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestTransfer $quoteRequestTransfer
-     *
-     * @return bool
-     */
     public function isQuoteRequestCancelable(QuoteRequestTransfer $quoteRequestTransfer): bool
     {
         return $this->quoteRequestAgentClient->isQuoteRequestCancelable($quoteRequestTransfer);

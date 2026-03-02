@@ -49,44 +49,27 @@ class QuoteRequestAgentOverviewWidget extends AbstractWidget
         }
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'QuoteRequestAgentOverviewWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@QuoteRequestAgentWidget/views/quote-request-agent-overview/quote-request-agent-overview.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestOverviewCollectionTransfer $quoteRequestOverviewCollectionTransfer
-     *
-     * @return void
-     */
     protected function addQuoteRequestOverviewCollectionParameter(
         QuoteRequestOverviewCollectionTransfer $quoteRequestOverviewCollectionTransfer
     ): void {
         $this->addParameter(static::PARAMETER_QUOTE_REQUEST_OVERVIEW_COLLECTION, $quoteRequestOverviewCollectionTransfer);
     }
 
-    /**
-     * @return void
-     */
     protected function addCartFormParameter(): void
     {
         $this->addParameter(static::PARAMETER_CART_FORM, $this->getFactory()->getQuoteRequestAgentCartForm()->createView());
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\QuoteRequestOverviewCollectionTransfer
-     */
     protected function getQuoteRequestOverviewCollection(): QuoteRequestOverviewCollectionTransfer
     {
         $quoteTransfer = $this->getFactory()

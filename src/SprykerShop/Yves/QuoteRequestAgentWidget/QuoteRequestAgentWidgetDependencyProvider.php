@@ -51,11 +51,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
      */
     public const SERVICE_ROUTER = 'routers';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -69,11 +64,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addQuoteRequestAgentClient(Container $container): Container
     {
         $container->set(static::CLIENT_QUOTE_REQUEST_AGENT, function (Container $container) {
@@ -83,11 +73,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addQuoteClient(Container $container): Container
     {
         $container->set(static::CLIENT_QUOTE, function (Container $container) {
@@ -97,11 +82,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addPersistentCartClient(Container $container): Container
     {
         $container->set(static::CLIENT_PERSISTENT_CART, function (Container $container) {
@@ -111,11 +91,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addCustomerClient(Container $container): Container
     {
         $container->set(static::CLIENT_CUSTOMER, function (Container $container) {
@@ -125,11 +100,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addRouterService(Container $container): Container
     {
         $container->set(static::SERVICE_ROUTER, function (ContainerInterface $container) {
@@ -139,11 +109,6 @@ class QuoteRequestAgentWidgetDependencyProvider extends AbstractBundleDependency
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addMessengerClient(Container $container): Container
     {
         $container->set(static::CLIENT_MESSENGER, function (Container $container) {

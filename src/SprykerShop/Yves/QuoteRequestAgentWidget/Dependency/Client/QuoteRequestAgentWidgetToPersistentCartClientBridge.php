@@ -24,11 +24,6 @@ class QuoteRequestAgentWidgetToPersistentCartClientBridge implements QuoteReques
         $this->persistentCartClient = $persistentCartClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return void
-     */
     public function reloadQuoteForCustomer(CustomerTransfer $customerTransfer): void
     {
         $this->persistentCartClient->reloadQuoteForCustomer($customerTransfer);

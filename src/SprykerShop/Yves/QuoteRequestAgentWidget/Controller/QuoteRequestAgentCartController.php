@@ -49,11 +49,6 @@ class QuoteRequestAgentCartController extends AbstractController
      */
     protected const PARAM_QUOTE_REQUEST_REFERENCE = 'quoteRequestReference';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function saveAction(Request $request): RedirectResponse
     {
         $response = $this->executeSaveAction($request);
@@ -61,9 +56,6 @@ class QuoteRequestAgentCartController extends AbstractController
         return $response;
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function clearAction(): RedirectResponse
     {
         $response = $this->executeClearAction();
@@ -71,11 +63,6 @@ class QuoteRequestAgentCartController extends AbstractController
         return $response;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function executeSaveAction(Request $request): RedirectResponse
     {
         $quoteRequestAgentCartForm = $this->getFactory()
@@ -110,11 +97,6 @@ class QuoteRequestAgentCartController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function createRefererRedirect(Request $request): RedirectResponse
     {
         $redirectUrl = $request->headers->get(
@@ -125,9 +107,6 @@ class QuoteRequestAgentCartController extends AbstractController
         return $this->redirectResponseExternal($redirectUrl);
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function executeClearAction(): RedirectResponse
     {
         $quoteTransfer = $this->getFactory()->getQuoteClient()->getQuote();
@@ -143,11 +122,6 @@ class QuoteRequestAgentCartController extends AbstractController
         ]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestResponseTransfer $quoteRequestResponseTransfer
-     *
-     * @return void
-     */
     protected function handleResponseErrors(QuoteRequestResponseTransfer $quoteRequestResponseTransfer): void
     {
         foreach ($quoteRequestResponseTransfer->getMessages() as $messageTransfer) {
@@ -155,9 +129,6 @@ class QuoteRequestAgentCartController extends AbstractController
         }
     }
 
-    /**
-     * @return void
-     */
     protected function reloadQuoteForCustomer(): void
     {
         $customerTransfer = $this->getFactory()->getCustomerClient()->getCustomer();
